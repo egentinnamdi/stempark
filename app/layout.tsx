@@ -27,7 +27,11 @@ export const metadata: Metadata = {
   description:
     "A tech-integrated resort in Life Camp: restaurants, sport, wellness and a co-working hub for founders and engineers. Nigeria's silicon valley — opening one world at a time.",
   icons: {
-    icon: "/assets/logo_mark.svg",
+    icon: [
+      { url: "/assets/logo_mark.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: "/assets/logo_mark.png",
   },
 }
 
