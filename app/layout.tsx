@@ -1,15 +1,35 @@
-import { Geist, Geist_Mono } from "next/font/google"
-
+import { Bricolage_Grotesque, DM_Sans, JetBrains_Mono } from "next/font/google"
+import type { Metadata } from "next"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'})
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-bricolage",
+  display: "swap",
+})
 
-const fontMono = Geist_Mono({
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  display: "swap",
+})
+
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
+  display: "swap",
 })
+
+export const metadata: Metadata = {
+  title: "STEM PARK — Where Abuja comes to build, play and stay",
+  description:
+    "A tech-integrated resort in Life Camp: restaurants, sport, wellness and a co-working hub for founders and engineers. Nigeria's silicon valley — opening one world at a time.",
+  icons: {
+    icon: "/assets/logo_mark.svg",
+  },
+}
 
 export default function RootLayout({
   children,
@@ -20,10 +40,17 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", geist.variable)}
+      className={cn(
+        "antialiased scroll-smooth",
+        bricolage.variable,
+        dmSans.variable,
+        jetbrainsMono.variable
+      )}
     >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className="font-sans bg-[#f7f6f3] text-[#2a303c] min-h-screen selection:bg-[#1f9d55] selection:text-white">
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
