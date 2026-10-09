@@ -12,7 +12,7 @@ export function Founders() {
       accentColor: "#31a63a", // Green
     },
     {
-      name: "Kate Fragaki",
+      name: "Kate Fragkaki",
       role: "Co-founder",
       photo: "/assets/photo_kate.png",
       accentColor: "#7c68c8", // Purple
@@ -21,26 +21,26 @@ export function Founders() {
 
   return (
     <section id="founders" className="w-full py-16 lg:py-24">
-      <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-20 xl:px-28">
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-20 xl:px-28">
         {/* Header */}
-        <div className="space-y-3 mb-10 lg:mb-14">
-          <span className="font-mono font-bold text-[11px] sm:text-[13px] tracking-[0.44px] sm:tracking-[0.52px] text-[#636b78] uppercase">
+        <div className="mb-10 space-y-3 lg:mb-14">
+          <span className="font-mono text-[11px] font-bold tracking-[0.44px] text-[#636b78] uppercase sm:text-[13px] sm:tracking-[0.52px]">
             THE PEOPLE BEHIND THE PARK
           </span>
-          <h2 className="font-heading font-extrabold text-[30px] sm:text-[42px] lg:text-[52px] leading-[1.08] text-[#2a303c]">
+          <h2 className="font-heading text-[30px] leading-[1.08] font-extrabold text-[#2a303c] sm:text-[42px] lg:text-[52px]">
             Founded in Abuja, built for everyone.
           </h2>
         </div>
 
         {/* Founder Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {founders.map((founder) => (
             <div
               key={founder.name}
-              className="bg-white border border-[#e2e4e8] rounded-[20px] lg:rounded-[28px] p-3.5 sm:p-5 flex items-center gap-4 sm:gap-7 transition-all duration-300 hover:shadow-md hover:border-[#cbd0d8]"
+              className="flex items-center gap-4 rounded-[20px] border border-[#e2e4e8] bg-white p-3.5 transition-all duration-300 hover:border-[#cbd0d8] hover:shadow-md sm:gap-7 sm:p-5 lg:rounded-[28px]"
             >
               {/* Photo */}
-              <div className="relative w-[96px] h-[96px] sm:w-[180px] sm:h-[180px] lg:w-[220px] lg:h-[220px] rounded-[14px] sm:rounded-[20px] overflow-hidden flex-shrink-0 bg-[#e2e4e8]">
+              <div className="relative h-[96px] w-[96px] flex-shrink-0 overflow-hidden rounded-[14px] bg-[#e2e4e8] sm:h-[180px] sm:w-[180px] sm:rounded-[20px] lg:h-[220px] lg:w-[220px]">
                 <Image
                   src={founder.photo}
                   alt={founder.name}
@@ -53,13 +53,13 @@ export function Founders() {
               <div className="flex flex-col space-y-2.5">
                 {/* Accent Strand Bar */}
                 <div
-                  className="w-10 h-1.5 rounded-[3px]"
+                  className="h-1.5 w-10 rounded-[3px]"
                   style={{ backgroundColor: founder.accentColor }}
                 />
-                <h3 className="font-heading font-extrabold text-[20px] sm:text-[28px] lg:text-[32px] leading-tight text-[#2a303c]">
+                <h3 className="font-heading text-[20px] leading-tight font-extrabold text-[#2a303c] sm:text-[28px] lg:text-[32px]">
                   {founder.name}
                 </h3>
-                <p className="font-body font-medium text-[14px] sm:text-[17px] text-[#636b78]">
+                <p className="font-body text-[14px] font-medium text-[#636b78] sm:text-[17px]">
                   {founder.role}
                 </p>
               </div>
